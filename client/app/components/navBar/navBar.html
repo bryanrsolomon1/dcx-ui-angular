@@ -1,0 +1,37 @@
+<md-toolbar>
+    <div class="md-toolbar-tools" layout="row">
+        <div flex="10">DeviceConX</div>
+        <md-input-container flex>
+            <label>Search</label>
+            <input/>
+        </md-input-container>
+        Filter by
+        <md-button class="dcx-blue" flex="5">All Groups</md-button>
+        <div layout="row" flex="25" flex-offset="45">
+            <md-menu >
+                <md-button ng-click="$mdOpenMenu($event)">Inventory</md-button>
+                <md-menu-content width="2">
+                    <md-menu-item ng-repeat="item in NavBar.inventoryMenuItems">
+                        <md-button ui-sref="{{item.state}}">{{item.title}}</md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <md-menu>
+                <md-button ng-click="$mdOpenMenu($event)">Admin</md-button>
+                <md-menu-content width="2">
+                    <md-menu-item ng-repeat="item in NavBar.adminMenuItems">
+                        <md-button ui-sref="{{item.state}}">{{item.title}}</md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <md-menu>
+                <md-button ng-click="$mdOpenMenu($event)">VitalsConX</md-button>
+                <md-menu-content width="2">
+                    <md-menu-item ng-repeat="item in NavBar.vcxMenuItems">
+                        <md-button ui-sref="{{item.state}}">{{item.title}}</md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </div>
+    </div>
+</md-toolbar>
