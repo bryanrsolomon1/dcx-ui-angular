@@ -4,10 +4,10 @@
 (function () {
     "use strict";
 
-    function Routes($stateProvider, NODES_STATE, DEVICES_STATE, GATEWAYS_STATE, GROUPS_STATE, PARAMETERS_STATE) {
+    function Routes($stateProvider, INVENTORY_STATES) {
 
         $stateProvider
-            .state(NODES_STATE, {
+            .state(INVENTORY_STATES.NODES, {
                 url: "nodes",
                 templateUrl: "app/components/nodes/nodes.html",
                 controller: "NodesCtrl",
@@ -15,7 +15,7 @@
                     PageHeader.setPageHeader("Node List");
                 }
             })
-            .state(DEVICES_STATE, {
+            .state(INVENTORY_STATES.DEVICES, {
                 url: "devices",
                 templateUrl: "app/components/devices/devices.html",
                 controller: "DevicesCtrl as Devices",
@@ -23,15 +23,15 @@
                     PageHeader.setPageHeader("Device List");
                 }
             })
-            .state(GATEWAYS_STATE, {
+            .state(INVENTORY_STATES.GATEWAYS, {
                 url: "gateways",
                 templateUrl: "app/components/gateways/gateways.html",
-                controller: "GatewaysCtrl",
+                controller: "GatewaysCtrl as Gateways",
                 onEnter: function(PageHeader) {
                     PageHeader.setPageHeader("Gateway List");
                 }
             })
-            .state(GROUPS_STATE, {
+            .state(INVENTORY_STATES.GROUPS, {
                 url: "groups",
                 templateUrl: "app/components/groups/groups.html",
                 controller: "GroupsCtrl",
@@ -39,7 +39,7 @@
                     PageHeader.setPageHeader("Groups List");
                 }
             })
-            .state(PARAMETERS_STATE, {
+            .state(INVENTORY_STATES.PARAMETERS, {
                 url: "parameters",
                 templateUrl: "app/components/parameters/parameters.html",
                 controller: "ParametersCtrl",
