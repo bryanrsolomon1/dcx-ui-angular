@@ -5,7 +5,7 @@
     "use strict";
 
     function Routes($urlRouterProvider, $stateProvider) {
-        $urlRouterProvider.otherwise("/home");
+        $urlRouterProvider.otherwise("/map");
 
         $stateProvider.state("root", {
                 abstract: true,
@@ -27,11 +27,6 @@
                         template: "<div ui-view></div>"
                     }
                 }
-            })
-            .state("root.main.home", {
-                url: "home",
-                templateUrl: "app/components/home/home.html",
-                controller: "HomeCtrl as Home"
             });
     }
 

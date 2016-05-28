@@ -1,13 +1,24 @@
 /**
  * Created by KGraham on 5/26/16.
  */
-(function () {
+(function(){
     "use strict";
 
-    function ParametersCtrl($log) {
-        $log.debug("Hello from ParametersCtrl")
+    function ParametersCtrl(DriverDataStore){
+
+        var self = this;
+
+        self.drivers = angular.copy(DriverDataStore.getDrivers());
+        self.setParameters = setParameters;
+
+        function setParameters() {
+            if (self.indexSelected) {
+                self.parameters = self.drivers[self.indexSelected].parameters;
+            }
+        }
     }
 
-    angular.module('DCX').controller('ParametersCtrl', ParametersCtrl);
+    angular.module('DCX')
+           .controller('ParametersCtrl', ParametersCtrl);
 
 })();

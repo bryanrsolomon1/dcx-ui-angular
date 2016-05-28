@@ -1,34 +1,50 @@
-<md-toolbar>
+<md-toolbar id="navbar">
     <div class="md-toolbar-tools" layout="row">
-        <div flex="10">DeviceConX</div>
-        <md-input-container flex>
-            <label>Search</label>
+        <div>DeviceConX</div>
+        <md-input-container class="search-box">
+            <label>search</label>
             <input/>
         </md-input-container>
-        Filter by
-        <md-button class="dcx-blue" flex="5">All Groups</md-button>
-        <div layout="row" flex="25" flex-offset="45">
-            <md-menu >
-                <md-button ng-click="$mdOpenMenu($event)">Inventory</md-button>
+        <span class="navbar-text">Filter by</span>
+        <md-button id="all-groups-button" class="md-raised">All Groups</md-button>
+        <span flex></span>
+        <div layout="row" flex="25">
+            <md-menu>
+                <md-button ng-click="$mdOpenMenu($event)">
+                    Inventory
+                    <i class="fa fa-sort-desc arrow-down"></i>
+                </md-button>
                 <md-menu-content width="2">
                     <md-menu-item ng-repeat="item in NavBar.inventoryMenuItems">
-                        <md-button ui-sref="{{item.state}}">{{item.title}}</md-button>
+                        <md-button ui-sref="{{item.state}}">
+                            {{item.title}}
+                        </md-button>
                     </md-menu-item>
                 </md-menu-content>
             </md-menu>
             <md-menu>
-                <md-button ng-click="$mdOpenMenu($event)">Admin</md-button>
+                <md-button ng-click="$mdOpenMenu($event)">
+                    Admin
+                    <i class="fa fa-sort-desc arrow-down"></i>
+                </md-button>
                 <md-menu-content width="2">
                     <md-menu-item ng-repeat="item in NavBar.adminMenuItems">
-                        <md-button ui-sref="{{item.state}}">{{item.title}}</md-button>
+                        <md-button ui-sref="{{item.state}}">
+                            {{item.title}}
+                        </md-button>
                     </md-menu-item>
                 </md-menu-content>
             </md-menu>
             <md-menu>
-                <md-button ng-click="$mdOpenMenu($event)">VitalsConX</md-button>
+                <md-button ng-click="$mdOpenMenu($event)">
+                    VitalsConX
+                    <i class="fa fa-sort-desc arrow-down"></i>
+                </md-button>
                 <md-menu-content width="2">
                     <md-menu-item ng-repeat="item in NavBar.vcxMenuItems">
-                        <md-button ui-sref="{{item.state}}">{{item.title}}</md-button>
+                        <md-button ui-sref="{{item.state}}">
+                            {{item.title}}
+                        </md-button>
                     </md-menu-item>
                 </md-menu-content>
             </md-menu>

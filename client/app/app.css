@@ -1,9 +1,12 @@
-body {
-    /*TODO get lato font*/
-    font-family: Helvetica
+body button, input, select, textarea, table, td, tr, span {
+    font-family: "lato", Helvetica, Arial, sans-serif;
+    text-transform: none;
 }
 
 .dcx-blue {
     background-color: #00aadf;
 }
 
+.text-white {
+    color: white;
+}
