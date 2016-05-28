@@ -1,1 +1,56 @@
-Parameters
+<div id="parameters" class="md-padding">
+    <div layout="column" class="md-margin">
+        <div layout="row">
+            <md-input-container flex="33">
+                <label>Select a device driver</label>
+                <md-select ng-model="Parameters.indexSelected" md-on-close="Parameters.setParameters()">
+                    <md-option ng-repeat="driver in Parameters.drivers" value="{{$index}}">
+                        {{driver.name}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+        <div layout="row">
+            <a href="#">Migrate Parameters</a>
+        </div>
+    </div>
+    <md-divider></md-divider>
+    <div layout="row" class="body-divider">
+        <div flex="33">
+            <span class="column-label">Available</span>
+            <div class="border-box">
+                <md-list class="parameter-list">
+                    <md-list-item>
+                        <md-input-container flex>
+                            <label>search</label>
+                            <input/>
+                        </md-input-container>
+                    </md-list-item>
+                    <md-list-item class="md-2-line"
+                                  ng-repeat="parameter in Parameters.parameters" ng-click="null">
+                        <div class="md-list-item-text" layout="column">
+                            <div layout="row">
+                                <h3> {{ parameter.name }}</h3><h4> {{ parameter.uom }}</h4>
+                            </div>
+                            <div layout="row">
+                                <p>{{ parameter.description }}</p>
+                            </div>
+                        </div>
+                    </md-list-item>
+                </md-list>
+            </div>
+        </div>
+        <div flex="66">
+            <div layout="row" class="outbound-half">
+                <span class="column-label">Outbound</span>
+                <span flex></span>
+                <md-button class="dcx-blue text-white">Save</md-button>
+            </div>
+            <div class="border-box">
+                <md-list>
+
+                </md-list>
+            </div>
+        </div>
+    </div>
+</div>

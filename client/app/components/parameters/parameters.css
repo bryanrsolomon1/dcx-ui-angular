@@ -1,0 +1,27 @@
+#parameters .body-divider {
+    padding-top: 25px;
+}
+
+#parameters .column-label {
+    font-size: 22px;
+}
+
+#parameters .border-box {
+    border: solid black 1px;
+    border-top: none;
+    border-radius: 4px;
+    max-height: 300px;
+    overflow: auto;
+}
+
+#parameters md-list.parameter-list {
+    padding: 0;
+}
+
+#parameters .parameter-list md-list-item {
+    border-top: solid black 1px;
+}
+
+#parameters .outbound-half button {
+    margin-top: 0;
+}
