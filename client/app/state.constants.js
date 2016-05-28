@@ -5,19 +5,25 @@
     "use strict";
     
     angular.module("DCX")
-        .constant("NODES_STATE", "root.main.nodes")
-        .constant("DEVICES_STATE", "root.main.devices")
-        .constant("GATEWAYS_STATE", "root.main.gateways")
-        .constant("GROUPS_STATE", "root.main.groups")
-        .constant("PARAMETERS_STATE", "root.main.parameters")
-        .constant("EVENTS_STATE", "root.main.events")
-        .constant("MAP_STATE", "root.main.map")
-        .constant("DASHBOARD_STATE", "root.main.dashboard")
-        .constant("DEVICE_TEST_STATE", "root.main.deviceTest")
-        .constant("SETTINGS_STATE", "root.main.settings")
-        .constant("ABOUT_STATE", "root.main.about")
-        .constant("VCX_DEVICES_STATE", "root.main.vcxDevices")
-        .constant("VCX_PARAMETERS_STATE", "root.main.vcxParameters")
-        .constant("VCX_TEMPLATES_STATE", "root.main.vcxTemplates");
+        .constant("INVENTORY_STATES", {
+            "NODES": "root.main.nodes",
+            "DEVICES": "root.main.devices",
+            "GATEWAYS": "root.main.gateways",
+            "GROUPS": "root.main.groups",
+            "PARAMETERS": "root.main.parameters"
+        })
+        .constant("ADMIN_STATES", {
+            "EVENTS": "root.main.events",
+            "MAP": "root.main.map",
+            "DASHBOARD": "root.main.dashboard",
+            "DEVICE_TEST": "root.main.deviceTest",
+            "SETTINGS": "root.main.settings",
+            "ABOUT": "root.main.about"
+        })
+        .constant("VCX_STATES", {
+            "DEVICES": "root.main.vcxDevices",
+            "PARAMETERS": "root.main.vcxParameters",
+            "TEMPLATES": "root.main.vcxTemplates"
+        });
     
 })();

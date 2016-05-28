@@ -451,21 +451,26 @@ gulp.task("serve", ["set-deps-serve", "build-dev"], function () {
     });
 
     /* watch app scripts */
-    watch(paths.scripts, function () {
-        console.log("Script Watcher fired");
-        gulp.start("watch-index-dev");
+    watch(paths.scripts, function (vinyl) {
+        if(isOnlyChange(vinyl)) {
+            pipes.watchSingleScript(vinyl);
+        } else {
+            gulp.start("watch-index-dev");
+        }
     });
 
     /* watch html partials */
     watch(paths.partials, function (vinyl) {
-        console.log("Partial Watcher fired");
         pipes.watchSinglePartial(vinyl);
     });
 
     /* watch styles */
     watch(paths.styles, function (vinyl) {
-        console.log("Style Watcher fired");
-        gulp.start("watch-index-dev");
+        if(isOnlyChange(vinyl)) {
+            pipes.watchSingleStyle(vinyl);
+        } else {
+            gulp.start("watch-index-dev");
+        }
     });
 
     /* watch configuration file */
