@@ -42,7 +42,7 @@
             .state(INVENTORY_STATES.PARAMETERS, {
                 url: "parameters",
                 templateUrl: "app/components/parameters/parameters.html",
-                controller: "ParametersCtrl",
+                controller: "ParametersCtrl as Parameters",
                 onEnter: function(PageHeader) {
                     PageHeader.setPageHeader("Device Parameters");
                 }
