@@ -18,7 +18,7 @@
             .state(DEVICES_STATE, {
                 url: "devices",
                 templateUrl: "app/components/devices/devices.html",
-                controller: "DevicesCtrl",
+                controller: "DevicesCtrl as Devices",
                 onEnter: function(PageHeader) {
                     PageHeader.setPageHeader("Device List");
                 }
