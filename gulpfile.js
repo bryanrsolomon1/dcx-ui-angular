@@ -116,7 +116,7 @@ var pipes = {};
 
 pipes.pullFilePath = function (vinyl) {
     var length = vinyl.base.length;
-    var path = ".\\client\\app\\**\\" + vinyl.history[0].substring(length, vinyl.history[0].length);
+    var path = "./client/app/**/" + vinyl.history[0].substring(length, vinyl.history[0].length);
     return gulp.src(path);
 };
 
@@ -216,7 +216,6 @@ pipes.builtAppScriptsPro = function () {
 /* vendor javascripts */
 
 pipes.builtVendorScriptsDev = function () {
-    var print = require("gulp-print");
     return gulp.src(wiredep.js)
         .pipe(gulp.dest(config.gulp.distBower));
 };
