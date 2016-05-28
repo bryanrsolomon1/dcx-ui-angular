@@ -4,10 +4,10 @@
 (function () {
     "use strict";
 
-    function Routes($stateProvider, EVENTS_STATE, MAP_STATE, DASHBOARD_STATE, DEVICE_TEST_STATE, SETTINGS_STATE, ABOUT_STATE) {
+    function Routes($stateProvider, ADMIN_STATES) {
 
         $stateProvider
-            .state(EVENTS_STATE, {
+            .state(ADMIN_STATES.EVENTS, {
                 url: "events",
                 templateUrl: "app/components/events/events.html",
                 controller: "EventsCtrl",
@@ -15,7 +15,7 @@
                     PageHeader.setPageHeader("System Events");
                 }
             })
-            .state(MAP_STATE, {
+            .state(ADMIN_STATES.MAP, {
                 url: "map",
                 templateUrl: "app/components/map/map.html",
                 controller: "MapCtrl",
@@ -23,7 +23,7 @@
                     PageHeader.setPageHeader("System Inventory View");
                 }
             })
-            .state(DASHBOARD_STATE, {
+            .state(ADMIN_STATES.DASHBOARD, {
                 url: "dashboard",
                 templateUrl: "app/components/dashboard/dashboard.html",
                 controller: "DashboardCtrl",
@@ -31,7 +31,7 @@
                     PageHeader.setPageHeader("System Overview Dashboard");
                 }
             })
-            .state(DEVICE_TEST_STATE, {
+            .state(ADMIN_STATES.DEVICE_TEST, {
                 url: "deviceTest",
                 templateUrl: "app/components/deviceTest/deviceTest.html",
                 controller: "DeviceTestCtrl",
@@ -39,7 +39,7 @@
                     PageHeader.setPageHeader("Device Integration Test");
                 }
             })
-            .state(SETTINGS_STATE, {
+            .state(ADMIN_STATES.SETTINGS, {
                 url: "settings",
                 templateUrl: "app/components/settings/settings.html",
                 controller: "SettingsCtrl",
@@ -47,7 +47,7 @@
                     PageHeader.setPageHeader("Settings");
                 }
             })
-            .state(ABOUT_STATE, {
+            .state(ADMIN_STATES.ABOUT, {
                 url: "about",
                 templateUrl: "app/components/about/about.html",
                 controller: "AboutCtrl",

@@ -4,9 +4,7 @@
 (function () {
     "use strict";
 
-    function NavBarCtrl(NODES_STATE, DEVICES_STATE, GATEWAYS_STATE, GROUPS_STATE, PARAMETERS_STATE,
-                        EVENTS_STATE, MAP_STATE, DASHBOARD_STATE, DEVICE_TEST_STATE, SETTINGS_STATE, ABOUT_STATE,
-                        VCX_DEVICES_STATE, VCX_PARAMETERS_STATE, VCX_TEMPLATES_STATE) {
+    function NavBarCtrl(INVENTORY_STATES, ADMIN_STATES, VCX_STATES) {
         
         console.log("hello from the other side");
 
@@ -25,23 +23,23 @@
             return [
                 {
                     title: "Nodes",
-                    state: NODES_STATE
+                    state: INVENTORY_STATES.NODES
                 },
                 {
                     title: "Devices",
-                    state: DEVICES_STATE
+                    state: INVENTORY_STATES.DEVICES
                 },
                 {
                     title: "Gateways",
-                    state: GATEWAYS_STATE
+                    state: INVENTORY_STATES.GATEWAYS
                 },
                 {
                     title: "Groups",
-                    state: GROUPS_STATE
+                    state: INVENTORY_STATES.GROUPS
                 },
                 {
                     title: "Parameters",
-                    state: PARAMETERS_STATE
+                    state: INVENTORY_STATES.PARAMETERS
                 }]
         }
 
@@ -49,27 +47,27 @@
             return [
                 {
                     title: "Events",
-                    state: EVENTS_STATE
+                    state: ADMIN_STATES.EVENTS
                 },
                 {
                     title: "Map",
-                    state: MAP_STATE
+                    state: ADMIN_STATES.MAP
                 },
                 {
                     title: "Dashboard",
-                    state: DASHBOARD_STATE
+                    state: ADMIN_STATES.DASHBOARD
                 },
                 {
                     title: "Device Test",
-                    state: DEVICE_TEST_STATE
+                    state: ADMIN_STATES.DEVICE_TEST
                 },
                 {
                     title: "Settings",
-                    state: SETTINGS_STATE
+                    state: ADMIN_STATES.SETTINGS
                 },
                 {
                     title: "About",
-                    state: ABOUT_STATE
+                    state: ADMIN_STATES.ABOUT
                 }]
         }
 
@@ -77,15 +75,15 @@
             return [
                 {
                     title: "Devices",
-                    state: VCX_DEVICES_STATE
+                    state: VCX_STATES.DEVICES
                 },
                 {
                     title: "Parameters",
-                    state: VCX_PARAMETERS_STATE
+                    state: VCX_STATES.PARAMETERS
                 },
                 {
                     title: "Template Library",
-                    state:  VCX_TEMPLATES_STATE
+                    state:  VCX_STATES.TEMPLATES
                 }]
         }
     }
