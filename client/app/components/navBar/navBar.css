@@ -14,6 +14,14 @@
     border-radius: 3px;
 }
 
+/*
+ * the floating label on the search box cannot turn orange when elevated during focus and it cannot turn grey when
+ * the user has input something. So we override here to be white in both cases
+ */
+#navbar md-input-container.md-input-has-value label, md-input-container.md-input-focused label {
+    color: white !important;
+}
+
 #all-groups-button {
     background-color: #00aadf;
     color: white;
