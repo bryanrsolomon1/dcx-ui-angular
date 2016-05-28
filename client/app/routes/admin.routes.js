@@ -20,7 +20,7 @@
                 templateUrl: "app/components/map/map.html",
                 controller: "MapCtrl",
                 onEnter: function(PageHeader) {
-                    PageHeader.setPageHeader("System Inventory View");
+                    PageHeader.setPageHeader("System Overview Map");
                 }
             })
             .state(ADMIN_STATES.DASHBOARD, {
