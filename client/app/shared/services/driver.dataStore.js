@@ -10,13 +10,13 @@
             name: "NantHealth Pseudo v01.00.000",
             parameters: [
                 {name: "ART_DBP", uom: "mmHg", description: "Pseudo ART_DBP"},
-                {name: "ART_DBP", uom: "mmHg", description: "Pseudo ART_DBP"},
-                {name: "ART_DBP", uom: "mmHg", description: "Pseudo ART_DBP"},
-                {name: "ART_DBP", uom: "mmHg", description: "Pseudo ART_DBP"},
-                {name: "ART_DBP", uom: "mmHg", description: "Pseudo ART_DBP"},
-                {name: "ART_DBP", uom: "mmHg", description: "Pseudo ART_DBP"},
-                {name: "ART_DBP", uom: "mmHg", description: "Pseudo ART_DBP"},
-                {name: "ART_DBP", uom: "mmHg", description: "Pseudo ART_DBP"}
+                {name: "CO", uom: "L/min", description: "Pseudo CO"},
+                {name: "ETCO2", uom: "mmHg", description: "Pseudo ETCO2"},
+                {name: "FIO2", uom: "%", description: "Pseudo FIO2"},
+                {name: "HR", uom: "bpm", description: "Pseudo HR"},
+                {name: "INSPTM", uom: "s", description: "Pseudo INSPTM"},
+                {name: "MESSAGE_CONTROL_ID", uom: "", description: "Pseudo Message Control ID"},
+                {name: "MV", uom: "L/min", description: "Pseudo MV"}
             ]
         }];
 
