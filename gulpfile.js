@@ -20,7 +20,7 @@ var paths = {
     scripts: "./client/app/**/*.js",
     styles: "./client/app/**/*.css",
     partials: "./client/app/**/*.html",
-    assets: "./client/asset/**/*",
+    assets: "./client/assets/**/*",
     index: "./client/index.html",
     configReference: "./config/tracked/env.json",
     config: "./config/",
@@ -174,7 +174,7 @@ pipes.builtVendorScriptsPro = function () {
 /* put all fonts into the dist */
 pipes.builtAssets = function () {
     return gulp.src(paths.assets)
-        .pipe(gulp.dest(config.gulp.dist + "asset"));
+        .pipe(gulp.dest(config.gulp.dist + "assets"));
 };
 
 /* app config objects */
@@ -376,7 +376,7 @@ gulp.task("serve", ["set-deps-serve", "build-dev"], function () {
             baseDir: config.gulp.dist
         },
         ghostMode: false,
-        port: 9000
+        port: 9002
     });
 
     /* watch index */
@@ -421,6 +421,6 @@ gulp.task("serve-itg", ["set-deps-serve", "build-itg"], function () {
             baseDir: config.gulp.dist
         },
         ghostMode: false,
-        port: 9000
+        port: 9002
     });
 });
