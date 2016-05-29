@@ -4,13 +4,16 @@
 (function () {
     "use strict";
 
-    function Routes($stateProvider, INVENTORY_STATES) {
+    function Routes($stateProvider, INVENTORY_STATES, USER_ROLES) {
 
         $stateProvider
             .state(INVENTORY_STATES.NODES, {
                 url: "nodes",
                 templateUrl: "app/components/nodes/nodes.html",
                 controller: "NodesCtrl",
+                data: {
+                    authorizedRoles: [USER_ROLES.ADMIN]
+                },
                 onEnter: function(PageHeader) {
                     PageHeader.setPageHeader("Node List");
                 }
@@ -19,6 +22,9 @@
                 url: "devices",
                 templateUrl: "app/components/devices/devices.html",
                 controller: "DevicesCtrl as Devices",
+                data: {
+                    authorizedRoles: [USER_ROLES.ADMIN]
+                },
                 onEnter: function(PageHeader) {
                     PageHeader.setPageHeader("Device List");
                 }
@@ -27,6 +33,9 @@
                 url: "gateways",
                 templateUrl: "app/components/gateways/gateways.html",
                 controller: "GatewaysCtrl as Gateways",
+                data: {
+                    authorizedRoles: [USER_ROLES.ADMIN]
+                },
                 onEnter: function(PageHeader) {
                     PageHeader.setPageHeader("Gateway List");
                 }
@@ -35,6 +44,9 @@
                 url: "groups",
                 templateUrl: "app/components/groups/groups.html",
                 controller: "GroupsCtrl",
+                data: {
+                    authorizedRoles: [USER_ROLES.ADMIN]
+                },
                 onEnter: function(PageHeader) {
                     PageHeader.setPageHeader("Groups List");
                 }
@@ -43,6 +55,9 @@
                 url: "parameters",
                 templateUrl: "app/components/parameters/parameters.html",
                 controller: "ParametersCtrl as Parameters",
+                data: {
+                    authorizedRoles: [USER_ROLES.ADMIN]
+                },
                 onEnter: function(PageHeader) {
                     PageHeader.setPageHeader("Device Parameters");
                 }

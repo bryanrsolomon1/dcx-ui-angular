@@ -5,6 +5,10 @@
     "use strict";
     
     angular.module("DCX")
-        .constant("ENVIRONMENT_DEV", "development");
+        .constant("ENVIRONMENT_TYPES", {
+            DEV: "development",
+            ITG: "integration",
+            PRO: "production"
+        });
     
 })();
