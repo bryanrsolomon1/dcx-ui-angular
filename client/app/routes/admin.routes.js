@@ -4,13 +4,16 @@
 (function () {
     "use strict";
 
-    function Routes($stateProvider, ADMIN_STATES) {
+    function Routes($stateProvider, ADMIN_STATES, USER_ROLES) {
 
         $stateProvider
             .state(ADMIN_STATES.EVENTS, {
                 url: "events",
                 templateUrl: "app/components/events/events.html",
                 controller: "EventsCtrl",
+                data: {
+                    authorizedRoles: [USER_ROLES.ADMIN, USER_ROLES.EDITOR]
+                },
                 onEnter: function(PageHeader) {
                     PageHeader.setPageHeader("System Events");
                 }
@@ -19,6 +22,9 @@
                 url: "map",
                 templateUrl: "app/components/map/map.html",
                 controller: "MapCtrl",
+                data: {
+                    authorizedRoles: [USER_ROLES.ADMIN, USER_ROLES.EDITOR]
+                },
                 onEnter: function(PageHeader) {
                     PageHeader.setPageHeader("System Overview Map");
                 }
@@ -27,6 +33,9 @@
                 url: "dashboard",
                 templateUrl: "app/components/dashboard/dashboard.html",
                 controller: "DashboardCtrl",
+                data: {
+                    authorizedRoles: [USER_ROLES.ADMIN, USER_ROLES.EDITOR]
+                },
                 onEnter: function(PageHeader) {
                     PageHeader.setPageHeader("System Overview Dashboard");
                 }
@@ -35,6 +44,9 @@
                 url: "deviceTest",
                 templateUrl: "app/components/deviceTest/deviceTest.html",
                 controller: "DeviceTestCtrl",
+                data: {
+                    authorizedRoles: [USER_ROLES.ADMIN, USER_ROLES.EDITOR]
+                },
                 onEnter: function(PageHeader) {
                     PageHeader.setPageHeader("Device Integration Test");
                 }
@@ -43,6 +55,9 @@
                 url: "settings",
                 templateUrl: "app/components/settings/settings.html",
                 controller: "SettingsCtrl",
+                data: {
+                    authorizedRoles: [USER_ROLES.ADMIN, USER_ROLES.EDITOR]
+                },
                 onEnter: function(PageHeader) {
                     PageHeader.setPageHeader("Settings");
                 }
@@ -51,6 +66,9 @@
                 url: "about",
                 templateUrl: "app/components/about/about.html",
                 controller: "AboutCtrl",
+                data: {
+                    authorizedRoles: [USER_ROLES.ADMIN, USER_ROLES.EDITOR]
+                },
                 onEnter: function(PageHeader) {
                     PageHeader.setPageHeader("About");
                 }
