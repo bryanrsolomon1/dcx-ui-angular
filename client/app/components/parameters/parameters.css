@@ -75,3 +75,7 @@
 #parameters .outbound-parameters md-input-container {
     background-color: white;
 }
+
+#parameters .outbound-parameters md-input-container.md-input-has-value label, #parameters .outbound-parameters md-input-container.md-input-focused label {
+    color: rgba(0,0,0,0.54) !important;
+}
