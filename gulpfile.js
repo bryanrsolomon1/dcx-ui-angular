@@ -13,7 +13,7 @@ var es = require("event-stream");
 var configGenerator = require("./config");
 var b2v = require("buffer-to-vinyl");
 
-var Karma, protractor, watch, browserSync, connect, config, htmlhint, jshint, stylish, htmlmin, ngHtml2js,
+var watch, browserSync, config, htmlhint, jshint, stylish, htmlmin, ngHtml2js,
     cleanCss, uglify, concat;
 
 var paths = {
@@ -47,71 +47,6 @@ gulp.task("set-deps-quality", function () {
     htmlhint = require("gulp-htmlhint");
 });
 
-gulp.task("set-deps-test", function () {
-    Karma = require("karma").Server;
-    protractor = require("gulp-protractor").protractor;
-    watch = require("gulp-watch");
-    browserSync = require("browser-sync")
-        .create();
-    connect = require("gulp-connect");
-});
-
-/******************************* These tasks have yet to be updated, use at your own risk ***********/
-gulp.task("ngdocs", [], function () {
-    var gulpDocs = require("gulp-ngdocs");
-    return gulp.src("client/js/**/*.js")
-        .pipe(gulpDocs.process())
-        .pipe(gulp.dest("./docs"));
-});
-
-/**
- * Todo: Changes to docs directory is not what changes the documentation,
- * it is changes to the comments in the javascript code itself that we need to watch
- */
-gulp.task("serveDocs", ["set-dev-dependencies", "ngdocs"], function () {
-    browserSync.init({
-        server: "./docs",
-        ghostMode: false
-    });
-
-    gulp.watch("client/js/**/*.js")
-        .on("change", browserSync.reload);
-});
-
-gulp.task("connect", function () {
-    connect.server({
-        root: "client/",
-        port: 8080
-    });
-});
-
-gulp.task("test", ["unit", "e2e"]);
-
-/**
- * Run unit tests once and exit
- */
-gulp.task("unit", ["set-deps-test"], function () {
-    var server = new Karma({
-        configFile: __dirname + "/tests/Karma.conf.js",
-        singleRun: true
-    });
-
-    server.start();
-});
-
-gulp.task("e2e", ["set-deps-test"], function () {
-    //var args = ["--baseUrl", "http://localhost:8080"];
-    gulp.src(["./tests/e2e/**/*.js"])
-        .pipe(protractor({
-            configFile: "tests/protractor.conf.js"
-            //args: args
-        }))
-        .on("error", function (e) {
-            throw e;
-        });
-});
-
-/********************************** New Gulp ************************************************************************/
 var pipes = {};
 
 pipes.pullFilePath = function (vinyl) {
